@@ -116,15 +116,3 @@ Platform instructions: [Android hotspot and tethering](https://support.google.co
 Pipe serves local HTTP so it works without certificate setup. Browsers allow the main app and real-time sync over HTTP, but most phone browsers require a trusted HTTPS origin for PWA installation, service workers/offline app shell, Web Share Target, and clipboard API. Those features are included on a best-effort basis and activate only when the browser treats the origin as secure (for example `localhost` on the laptop). On phone HTTP, use the file picker and text box; the keyboard's Paste command works. While the server is stopped, the feed cannot sync or access stored files.
 
 Uploads are streamed to disk with a 1 GB limit. Image previews are enabled only when file bytes match PNG, JPEG, GIF, or WebP signatures. The PIN changes on every start; existing paired sessions remain valid.
-
-## Publish this release
-
-The included `publish-github.sh` publishes the source as the public repository
-`ordixian/pipe`. Install GitHub CLI, run `gh auth login` as `ordixian`, then run:
-
-```sh
-bash publish-github.sh
-```
-
-It copies only the listed project source files into a temporary Git repository,
-checks the signed-in account, and stops if `ordixian/pipe` already exists.
